@@ -47,6 +47,7 @@ def urlAnalysis(fileName):
 
     for url in processed:
         print(url)
+    return(processed)
 
 def freqAnalysis(set):
     words = []
@@ -65,4 +66,8 @@ def freqAnalysis(set):
 
 
 
-urlAnalysis('sites/usefulWebsites1.txt')
+usefulUrls = urlAnalysis('sites/usefulWebsites1.txt')
+
+with open('sites/usefulWebsites2.txt', 'a') as file:
+        for item in usefulUrls:
+            file.write(item + '\n')
